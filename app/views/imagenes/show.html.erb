@@ -1,15 +1,19 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+	<p id="notice"><%= notice %></p>
 
-<%=@imagene.image%>
-<p>
-  <strong>Texto:</strong>
-  <%= @imagene.texto %>
-</p>
+	<%= image_tag @imagene.image , size: "800" %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @imagene.description %>
-</p>
+	<p>
+	  <strong>Texto:</strong>
+	  <%= @imagene.texto %>
+	</p>
 
-<%= link_to 'Edit', edit_imagene_path(@imagene) %> |
-<%= link_to 'Back', imagenes_path %>
+	<p>
+	  <strong>Description:</strong>
+	  <%= @imagene.description %>
+	</p>
+
+	<%= link_to 'Edit', edit_imagene_path(@imagene) %> |
+	<%= link_to 'Back', imagenes_path %>
+</div>
+
