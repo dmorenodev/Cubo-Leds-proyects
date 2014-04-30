@@ -1,0 +1,19 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <!--Desplegable inicio scaffold-->
+  <div class="container">
+    <div class="navbar-header">
+      <%= link_to 'Inicio', root_path, class: 'navbar-brand' %>
+      <%= link_to 'Videos', videos_path, class: 'navbar-brand' %>
+      
+      <button type="button" class="btn btn-default btn-md dropdown-toggle boton-sesion" data-toggle="dropdown">
+          <i class="fa fa-bars"></i> 
+      </button>
+        <ul class="dropdown-menu desplegable" role="menu">
+          <%= render 'layouts/navigation_links' %>
+        </ul>
+    </div>
+
+
+
+</nav>
+
