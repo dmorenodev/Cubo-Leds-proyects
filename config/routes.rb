@@ -1,4 +1,6 @@
 CuboLedsproyect::Application.routes.draw do
+  resources :imagenes
+
   resources :videos
 
   root :to => "home#index"

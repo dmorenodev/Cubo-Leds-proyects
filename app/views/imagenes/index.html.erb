@@ -1,0 +1,30 @@
+<h1>Listing imagenes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Texto</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @imagenes.each do |imagene| %>
+      <tr>
+        <td><%= image_tag imagene.image_url(:thumb).to_s %></td>
+        <td><%= imagene.texto %></td>
+        <td><%= imagene.description %></td>
+        <td><%= link_to 'Show', imagene %></td>
+        <td><%= link_to 'Edit', edit_imagene_path(imagene) %></td>
+        <td><%= link_to 'Destroy', imagene, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Imagene', new_imagene_path %>

@@ -51,6 +51,11 @@ GEM
     capistrano-rvm (0.1.1)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -131,6 +136,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.3.1)
     ref (1.0.5)
+    rmagick (2.13.2)
     rolify (3.4.0)
     sass (3.2.19)
     sass-rails (4.0.3)
@@ -190,6 +196,7 @@ DEPENDENCIES
   capistrano-rails (~> 1.1.0)
   capistrano-rails-console
   capistrano-rvm (~> 0.1.1)
+  carrierwave
   coffee-rails (~> 4.0.0)
   devise
   font-awesome-rails
@@ -202,6 +209,7 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.0.4)
   rails_layout
+  rmagick
   rolify
   sass-rails (~> 4.0.2)
   simple_form

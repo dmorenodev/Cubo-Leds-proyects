@@ -11,6 +11,8 @@ gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass'
 gem 'cancan'
 gem "font-awesome-rails"
+gem 'carrierwave'
+gem "rmagick"
 gem 'impressionist'
 gem 'devise'
 gem 'rolify'
