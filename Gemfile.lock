@@ -71,8 +71,12 @@ GEM
     font-awesome-rails (4.0.3.2)
       railties (>= 3.2, < 5.0)
     hike (1.2.3)
+    httpclient (2.3.4.1)
     hub (1.12.0)
     i18n (0.6.9)
+    impressionist (1.5.1)
+      httpclient (~> 2.2)
+      nokogiri (~> 1.5)
     interception (0.5)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
@@ -87,11 +91,14 @@ GEM
       treetop (~> 1.4.8)
     method_source (0.8.2)
     mime-types (1.25.1)
+    mini_portile (0.5.3)
     minitest (4.7.5)
     multi_json (1.9.3)
     net-scp (1.2.0)
       net-ssh (>= 2.6.5)
     net-ssh (2.8.0)
+    nokogiri (1.6.1)
+      mini_portile (~> 0.5.0)
     orm_adapter (0.5.0)
     polyglot (0.3.4)
     pry (0.9.12.6)
@@ -187,6 +194,7 @@ DEPENDENCIES
   devise
   font-awesome-rails
   hub
+  impressionist
   jbuilder (~> 1.2)
   jquery-rails
   pry-rails
