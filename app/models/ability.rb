@@ -5,7 +5,21 @@ class Ability
     user ||= User.new # guest user (not logged in)
     if user.has_role? :admin
       can :manage, :all
+      else
+      can :read, :all
     end
+
+    if user.has_role? :equipoproyecto
+      can :delete, :all
+      can :create, :all
+    end
+
+
+    if user.has_role? :gestorcontenidos
+      can :create, :all
+    end
+
+
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

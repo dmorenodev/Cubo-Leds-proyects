@@ -16,8 +16,13 @@
         <h2><strong><%= imagene.texto %></strong></h2>
         <div><%= image_tag imagene.image_url(:thumb).to_s %></div>
         <div><%= imagene.description %></div>
-        <div><%= link_to 'Edit', edit_imagene_path(imagene) %></div>
-        <div><%= link_to 'Destroy', imagene, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+        <% if can? :create, Imagene %>
+          <div><%= link_to 'Edit', edit_imagene_path(imagene) %></div>
+        <% end %>
+
+        <% if can? :delete, Imagene %>
+          <div><%= link_to 'Destroy', imagene, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+        <% end %>
     </div>
 
     <% end %>
@@ -25,8 +30,9 @@
 
 
 <br>
-
-<%= link_to 'New Imagene', new_imagene_path %> 
+<% if can? :create, Imagene %>
+  <%= link_to 'New Image', new_imagene_path %> 
+<% end %>
 </div>
   </div> 
     
