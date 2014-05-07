@@ -1,14 +1,14 @@
 <div id="role-options-<%= user.id %>" class="modal" style="display: none;background-color:black; opacity:0.8;">
   <%= simple_form_for user, :url => user_path(user), :html => {:method => :put, :class => 'form-horizontal' } do |f| %>
     <div class="modal-header">
-      <h3>Change Role</h3>
+      <h3>Cambiar Role</h3>
     </div>
     <div class="modal-body">
       <%= f.input :role_ids, :collection => Role.all, :as => :radio_buttons, :label_method => lambda {|t| t.name.titleize}, :label => false, :item_wrapper_class => 'inline', checked: user.role_ids.first %>
     </div>
     <div class="modal-footer">
-      <%= f.submit "Change Role", :class => "btn" %>
-      <a class="btn" data-dismiss="modal" href="#">Close</a>
+      <%= f.submit "Cambiar Role", :class => "btn" %>
+      <a class="btn" data-dismiss="modal" href="#">Cerrar</a>
     </div>
   <% end %>
 </div>
