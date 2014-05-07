@@ -1,3 +1,48 @@
 // Place all the styles related to the imagenes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+   .pagination {
+
+   	a{
+   		margin-right: 5px;
+    	border: 2px solid #ADADAD;
+    	padding: 5px 10px 5px 10px;
+    	border-radius: 5px 5px;
+   	}
+
+	a:link    {color:#ADADAD;}
+	a:visited {color:#ADADAD;}
+	a:hover   {
+		text-decoration: none;
+		background-color: #3498DB;     	
+		border: 2px solid #3690CD;
+	}
+
+	a:active  {color:yellow;}
+
+    .previous_page { 
+    	border: 2px solid #ADADAD;
+    	padding: 5px 5px 5px 5px;
+    }
+    .previous_page.disabled { 
+    	background: white; 
+    	border: 2px solid white;
+    	padding: 5px 5px 5px 5px;
+    }
+    .page_links{
+    	background-color: red;
+    }
+    .current { 
+    	font-size: 14pt;
+    	color: #FF0084 
+    }
+    .next_page {    	
+    	padding: 5px 5px 5px 5px;
+    	border: 2px solid #ADADAD; }
+
+    .next_page.disabled { 
+    	padding: 5px 5px 5px 5px;
+    	border: 2px solid white;
+    }
+  }

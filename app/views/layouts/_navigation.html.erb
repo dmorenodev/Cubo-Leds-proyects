@@ -7,6 +7,10 @@
       <%= link_to 'Videos', videos_path, class: 'navbar-brand' %>
       
       <button type="button" class="btn btn-default btn-md dropdown-toggle boton-sesion" data-toggle="dropdown">
+          <% if user_signed_in? %>
+            <div class="usuario"><%=gravatar_image_tag( current_user.email)%></div> 
+            <%= current_user.name %>
+          <%end%>
           <i class="fa fa-bars"></i> 
       </button>
         <ul class="dropdown-menu desplegable" role="menu">

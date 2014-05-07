@@ -11,11 +11,13 @@ gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass'
 gem 'cancan'
 gem "font-awesome-rails"
+gem 'will_paginate-bootstrap'
 gem 'carrierwave'
 gem "rmagick"
 gem 'impressionist'
 gem 'devise'
 gem 'rolify'
+gem 'gravatar_image_tag'
 gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
 group :development do
