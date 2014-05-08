@@ -1,5 +1,5 @@
 <%# add navigation links to this file %>
-<% if user_signed_in? && (can? :create, User )%>
+<% if user_signed_in? && (can? :manage, User )%>
   <li><%= link_to 'Gestor de usuarios', users_path %></li>
 <% end %>
 <% if user_signed_in? %>
