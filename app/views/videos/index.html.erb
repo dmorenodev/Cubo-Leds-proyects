@@ -1,15 +1,20 @@
-  <h1>Listing videos</h1>
 
+    <div class="container">  
+       <h1>Videos desarrollo del proyecto</h1>   
+    </div>
 
- <tbody>
       <% @videos.each do |video| %>
-        <div class="container">     
+        <div class="container">  
           <div class="row featurette">
-            <div class="col-md-7">
-              <p class="lead">
-                <%= video.titulo %>
-              </p>
-                <%= video.description %>
+            <div class="col-md-7">             
+                <iframe width="645px" height="345px" 
+                        src="http://www.youtube.com/embed/<%=video.description%>" 
+                        frameborder="1">
+                </iframe>
+                <p>
+                  <%= video.titulo %>
+                </p>
+
             </div>
           </div>
           <div>
@@ -24,7 +29,7 @@
           <hr class="featurette-divider">
         </div>
     <% end %>
-  </tbody>
+
 </br>
 
 <% if can? :create, Video %>
