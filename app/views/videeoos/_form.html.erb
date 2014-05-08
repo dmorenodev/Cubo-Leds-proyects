@@ -1,0 +1,23 @@
+<div class="container">
+  <%= simple_form_for(@videeoo) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :Titulo %>
+      <%= f.input :Descripcion %>
+      <%= f.input :Url %>
+      <p style="font-size:7pt;"> 
+        <i>
+           Ejemplo: https://www.youtube.com/watch?v=<strong>QweFe4CeAJg</strong> </br>
+           Poner solo: <strong>QweFe4CeAJg<strong>
+        </i>
+      </p>
+
+      <%= f.input :Subido_por %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+</div>

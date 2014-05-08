@@ -1,0 +1,37 @@
+    <div class="container">
+       <h1>Videos desarrollo del proyecto</h1>
+    </div>
+
+      <% @videeoos.each do |videeoo| %>
+        <div class="container">
+          <div class="row featurette">
+            <div class="col-md-7">
+                <iframe width="645px" height="345px"
+                        src="http://www.youtube.com/embed/<%=videeoo.Url%>"
+                        frameborder="1">
+                </iframe>
+            </div>
+            <div class="col-md-5">
+                <p><%=videeoo.Titulo%></p>
+                <p><%=videeoo.Descripcion%></p>
+                <p><%=videeoo.Subido_por%></p>
+            </div>
+          </div>
+          <div>
+                <td><%= link_to 'Show', videeoo %></td>
+                <% if can? :create, Videeoo %>
+                  <td><%= link_to 'Edit', edit_videeoo_path(videeoo) %></td>
+                <%end%>
+                <% if can? :delete, Videeoo %>
+                  <td><%= link_to 'Destroy', videeoo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <%end%>
+          </div>
+          <hr class="featurette-divider">
+        </div>
+    <% end %>
+
+</br>
+
+<% if can? :create, Videeoo %>
+  <%= link_to 'New Video', new_videeoo_path %>
+<%end%>

@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+	<div class="col-md-12" style="text-align:center; margin-top:20px;">
+	<iframe align="middle" width="860px" height="515px" src="http://www.youtube.com/embed/<%= @videeoo.Url %>"                       frameborder="1">
+	</iframe>
+	</div>
+
+	<p>
+	  <strong>Titulo:</strong>
+	  <%= @videeoo.Titulo %>
+	</p>
+
+	<p>
+	  <strong>Descripcion:</strong>
+	  <%= @videeoo.Descripcion %>
+	</p>
+
+	<p>
+	  <strong>Subido por:</strong>
+	  <%= @videeoo.Subido_por %>
+	</p>
+
+	<%= link_to 'Edit', edit_videeoo_path(@videeoo) %> |
+	<%= link_to 'Back', videeoos_path %>
+
+</div>
+

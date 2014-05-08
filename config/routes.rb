@@ -1,7 +1,7 @@
 CuboLedsproyect::Application.routes.draw do
-  resources :imagenes
+  resources :videeoos
 
-  resources :videos
+  resources :imagenes
 
   root :to => "home#index"
   devise_for :users, :controllers => {:registrations => "registrations"}

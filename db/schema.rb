@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140430082219) do
+ActiveRecord::Schema.define(version: 20140508134202) do
 
   create_table "imagenes", force: true do |t|
     t.string   "texto"
@@ -86,6 +86,25 @@ ActiveRecord::Schema.define(version: 20140430082219) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
+
+  create_table "videeoos", force: true do |t|
+    t.string   "Titulo"
+    t.text     "Descripcion"
+    t.string   "Url"
+    t.string   "Subido_por"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "videoos", force: true do |t|
+    t.string   "Titulo"
+    t.text     "Descripcion"
+    t.string   "url"
+    t.datetime "created_at"
+    t.string   "datetime"
+    t.datetime "updated_at"
+    t.string   "subido"
+  end
 
   create_table "videos", force: true do |t|
     t.string   "titulo"
