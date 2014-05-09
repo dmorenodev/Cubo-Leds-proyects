@@ -1,24 +1,19 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <!--Desplegable inicio scaffold-->
-  <div class="container">
-    <div class="navbar-header">
-      <%= link_to 'Inicio', root_path, class: 'navbar-brand' %>
-      <%= link_to 'Imagenes', imagenes_path, class: 'navbar-brand' %>
-      <%= link_to 'Videos', videeoos_path, class: 'navbar-brand' %>
-      
-      <button type="button" class="btn btn-default btn-md dropdown-toggle boton-sesion" data-toggle="dropdown">
-          <% if user_signed_in? %>
-            <div class="usuario"><%=gravatar_image_tag( current_user.email)%></div> 
-            <%= current_user.name %>
-          <%end%>
-          <i class="fa fa-bars"></i> 
-      </button>
-        <ul class="dropdown-menu desplegable" role="menu">
-          <%= render 'layouts/navigation_links' %>
-        </ul>
+    <div class="container">
+        <%= render 'layouts/messages_navegador'%>
+      <div id="tab" class="tabs">
+        <nav>
+          <ul>
+            <li><a><%= link_to 'Inicio', root_path, class: 'fa fa-archive'%></a></li>
+            <li><a href="#section-5" class="fa fa-book"><span>Memoria</span></a></li>
+            <li><a><%= link_to 'Imagenes', imagenes_path, class: 'fa fa-picture-o' %></a></li>
+            <li><a id="video"><%= link_to 'Videos', videeoos_path, class: 'fa fa-video-camera tab-current' %></a></li>
+            <li><%= link_to 'Contacto', new_contacto_path, class: 'fa fa-phone' %></li>
+            <li><%= link_to 'Area personal',personal_new_path, class: 'fa fa-align-justify' %></li>
+          </ul>
+        </nav>
+      </div>
     </div>
 
 
 
-</nav>
 

@@ -1,18 +1,3 @@
-.usuario{
-	width:15px; 
-	height:15px; 
-	display: inline-block;
-}
-
-
-.boton-sesion{
-	position: fixed;
-	right: 30px;
-	top: 8px;
-}
-.desplegable{
-margin-left: 1185px;	
-}
 
 /* Botón Ir Arriba ----------------------------------------------- */
 #IrArriba {
