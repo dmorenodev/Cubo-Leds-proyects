@@ -12,10 +12,10 @@
 	<% if user_signed_in? %>
 	  <li><%= link_to 'Editar cuenta', edit_user_registration_path %></li>
 
-  <button type="button" class="btn btn-default" style="margin-top:100px; ">
- 		 <span class="glyphicon glyphicon-remove"></span>
+
     	 <%= link_to 'Cerrar sesión', destroy_user_session_path, :method=>'delete' %> 
-  </button>
+
+
 
 	<% else %>
 	  <li><%= link_to 'Iniciar sesión', new_user_session_path %></li>

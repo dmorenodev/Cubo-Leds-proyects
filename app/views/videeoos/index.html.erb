@@ -1,6 +1,4 @@
-    <div class="container">
-       <h1>Videos desarrollo del proyecto</h1>
-    </div>
+      <h1 class="container"><strong>Videos</strong></h1>
 
       <% @videeoos.each do |videeoo| %>
         <div class="container">
@@ -11,10 +9,12 @@
                         frameborder="1">
                 </iframe>
             </div>
-            <div class="col-md-5">
-                <p><%=videeoo.Titulo%></p>
-                <p><%=videeoo.Descripcion%></p>
-                <p><%=videeoo.Subido_por%></p>
+            <div class="col-md-5 ">
+                <p class="vid-titulo"><%=videeoo.Titulo%></p>
+                <h3><strong>Descripcion <i class="fa fa-comment-o"></i></strong></h3>
+                <p class="video-cont" style="text-align:center; height:200px;"><%=videeoo.Descripcion%></p>
+                <h3><strong>Subido por:</strong></h3>
+                <p style="text-align:right;"><%=videeoo.Subido_por%></p>
             </div>
           </div>
           <div>
