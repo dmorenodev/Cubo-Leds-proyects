@@ -10,8 +10,8 @@ class Message
   validates :Email, :format => { :with => %r{.+@.+\..+} }, :allow_blank => true
   
   def initialize(attributes = {})
-    attributes.each do |Nombre, value|
-      send("#{Nombre}=", value)
+    attributes.each do |value|
+      send(value)
     end
   end
 

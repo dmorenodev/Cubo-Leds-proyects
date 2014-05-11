@@ -1,6 +1,6 @@
 class NotificationsMailer < ActionMailer::Base
-  default :from => "cubodeled.info@gmail.com"
-  default :to => "cubodeled.admin@gmail.com"
+  default :from => "cubodeledsproyect@gmail.com"
+  default :to => "cubodeledsproyect@gmail.com"
 
   def new_message(message)
     @message = message
