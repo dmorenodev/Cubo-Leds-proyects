@@ -1,3 +1,19 @@
 // Place all the styles related to the contactos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.contacto{
+	padding-left: 200px;
+	width: 400px;
+	background-color: #F5F5F5;
+	border:1px solid #CCCCCC;
+	border-radius: 5px 5px;
+}
+
+.image-form{
+    position: fixed; ;
+    right: 130px;
+    bottom: 6px;
+
+}

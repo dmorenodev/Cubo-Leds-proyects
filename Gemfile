@@ -17,6 +17,7 @@ gem "rmagick"
 gem 'impressionist'
 gem 'devise'
 gem 'rolify'
+gem 'thin'
 gem 'gravatar_image_tag'
 gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
