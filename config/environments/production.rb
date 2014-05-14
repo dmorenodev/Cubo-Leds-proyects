@@ -3,6 +3,7 @@ CuboLedsproyect::Application.configure do
 
   # Code is not reloaded between requests.
   config.cache_classes = true
+  config.secret_key_base = 'a7ee67b2c75d976a3559cbcfec93c371b427d624ab2875ba137506e8dd5f7523be5e18b5f8e7f6471f7b2889a4b2af87a83be368d29da331ebdbd5a2d2c57928'
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both thread web servers
@@ -82,7 +83,7 @@ CuboLedsproyect::Application.configure do
     password: "cuevas940921"
   }
   # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => 'http://cubo_de_leds.novaws.es/' }
+  config.action_mailer.default_url_options = { :host => 'novaws.es' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
