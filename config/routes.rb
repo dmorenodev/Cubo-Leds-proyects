@@ -1,4 +1,5 @@
 CuboLedsproyect::Application.routes.draw do
+  get "memoria/index"
   get "personal/new"
   get "personal/create"
   resources :contactos

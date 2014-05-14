@@ -1,53 +1,234 @@
-<div>
-      <!-- Top Navigation -->
-      <header class="codrops-header" style="background-color:#3498DB;" >
-        <svg xmlns="http://www.w3.org/2000/svg" width="1000px" height="300px" class="polaroid" preserveAspectRatio="xMidYMid meet" viewBox="0 0 1000 300">
-          <g transform="rotate(-9.424738883972168 131.13208007812517,131.28302001953134) "><rect id="svg_6" height="194.264154" width="194.264154" y="34.15094" x="34"/><rect id="svg_7" height="116.226417" width="152.754719" y="56.566035" x="54.754717"/></g><rect id="svg_2" height="0" width="1" y="108" x="123" stroke-width="10" stroke="#000000" fill="#ffffff"/><g id="svg_10" transform="rotate(8.810273170471191 211.13208007812494,164.28302001953114) "><rect id="svg_11" height="194.264154" width="194.264154" y="67.15094" x="114"/><rect id="svg_12" height="116.226417" width="152.754719" y="89.566035" x="134.754717"/></g><g id="svg_13" transform="rotate(-14.838730812072754 350.132080078125,168.28302001953125) "><rect id="svg_14" height="194.264154" width="194.264154" y="71.15094" x="253"/><rect id="svg_15" height="116.226417" width="152.754719" y="93.566035" x="273.754717"/></g><g id="svg_16" transform="rotate(-1.4553210735321045 476.1320800781219,121.28302001953003) "><rect id="svg_17" height="194.264154" width="194.264154" y="24.15094" x="379"/><rect id="svg_18" height="116.226417" width="152.754719" y="46.566035" x="399.754717"/></g><g id="svg_19" transform="rotate(-4.776742458343506 556.1320800781244,176.28302001953122) "><rect id="svg_20" height="194.264154" width="194.264154" y="79.15094" x="459"/><rect id="svg_21" height="116.226417" width="152.754719" y="101.566035" x="479.754717"/></g><g id="svg_22" transform="rotate(17.17530059814453 690.1320800781251,163.2830200195312) "><rect id="svg_23" height="194.264154" width="194.264154" y="66.15094" x="593"/><rect id="svg_24" height="116.226417" width="152.754719" y="88.566035" x="613.754717"/></g><g id="svg_25" transform="rotate(-9.506031036376953 771.132080078125,177.28302001953094) "><rect id="svg_26" height="194.264154" width="194.264154" y="80.15094" x="674"/><rect id="svg_27" height="116.226417" width="152.754719" y="102.566035" x="694.754717"/></g><g id="svg_28" transform="rotate(19.351133346557617 862.1320800781251,137.28302001953148) "><rect id="svg_29" height="194.264154" width="194.264154" y="40.15094" x="765"/><rect id="svg_30" height="116.226417" width="152.754719" y="62.566035" x="785.754717"/></g></g>
-        </svg>
-        <h1>Galeria fotografica del desarrollo del proyecto.<span>Todas las fotos del desarrollo</span></h1>
-      </header>
-  
-  <div>
-    <div class="container">
-
-  <tbody>
-    <% @imagenes.each do |imagene| %>
-    <div class="col-md-6">
-        <h2><strong><%= imagene.texto %></strong></h2>
-        <div><%= image_tag imagene.image_url(:thumb).to_s %></div>
-        <div><%= imagene.description %></div>
-        <% if can? :create, Imagene %>
-          <div><%= link_to 'Edit', edit_imagene_path(imagene) %></div>
-        <% end %>
-
-        <% if can? :delete, Imagene %>
-          <div><%= link_to 'Destroy', imagene, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-        <% end %>
-    </div>
-
-    <% end %>
-  </tbody>
-</div>
-
+ 
 <% if can? :create, Imagene %>
   <%= link_to 'New Image', new_imagene_path %> 
 <% end %>
+<div class="container">
+  <div class="col-md-3">
+    <ul>
+      <li><a href="#intro">Introducion</a> </li>
+      <li><a href="#cubo">Creaccion Cubo</a></li>
+      <li>Creaccion Placa Base</li>
+      <li>Creaccion Code</li>
+      <li>Introduccion</li>
+      <li>Introduccion</li>
+      <li>Introduccion</li>
+    </ul>
+  </div>
+  <div class="col-md-9">
+    <ul id="cbp-ntaccordion" class="cbp-ntaccordion">
+        <li>
+            <h3 class="cbp-nttrigger"><a name="intro">Introdución</a></h3>
+            <div class="cbp-ntcontent">
+                <p> Nuestra motivacion para este proyecto era realizar un sistema electronico en el que por una vez pudiesemos ver y controlar los resultados de la programacion fuera de la pantalla del ordenador. </p>
+                <p>Por ello hemos montado un cubo luminico compuesto de una malla de leds soldados entre si y el montaje de su correspondiente placa controladora para posteriormente iluminarlos a través de codigo. </p>
+                <p>Todo esto a supuesto una gran reto ya que nuestro campo no es tanto la electronica sino la programacion.Siempre hemos querido hacer que un aparato físico que se moviese. Al no tener conocimientos de electrónica pero sí de programación, siempre fue nuestro gran reto.</p>
+                <ul class="cbp-ntsubaccordion">
+                    <li>
+                        <h4 class="cbp-nttrigger">Componentes</h4>
+                        <div class="cbp-ntcontent">
+                          <ul>
+                          <li><strong>Placa Base:</strong> Encargada de convertir los diferentes impulsos eléctricos en posiciones específicas en el cubo LED.</li>
+                          <li><strong>Arduino one:</strong> encargado de alimentar el cubo y actuar como programador. </li>
+                          <li><strong>Código: </strong>utilizando la tabla de Códigos de los caracteres ASCII ANSI.</li>
+                          </ul>
+   
+                        </div>
+                    </li>
+                    <li>
+                        <h4 class="cbp-nttrigger">Materiales utilizados</h4>
+                        <div class="cbp-ntcontent">
+                          <table style="width:500px; text-align:center;">
+                          <tr>
+                            <td><strong>Cantidad</strong></td>
+                            <td><strong>Nombre</strong></td>
 
-<div class="paginate">
-  <div class="container " style="text-align:center;">
-    <%= will_paginate @imagenes %>
+                          </tr>
+                          <tr>
+                            <td>100</td>
+                            <td>100 ohm Resistencias</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Prototyping Board</td>
+                          </tr>
+                          <tr>
+                            <td>Eve</td>
+                            <td>74HC138N Chip</td>
+                          </tr>
+                          <tr>
+                            <td> </td>
+                            <td>2222A Transistor </td>
+                          </tr>
+                          <tr>
+                            <td>3 m</td>
+                            <td>Ribbon Cable Header </td>
+                          </tr>
+                          <tr>
+                            <td>1</td>
+                            <td>Arduino UNO</td>
+                          </tr>
+                          <tr>
+                            <td>1</td>
+                            <td>USB Cable</td>
+                          </tr>
+                          <tr>
+                            <td>1000</td>
+                            <td>Leds</td>
+                          </tr>
+                          <tr>
+                            <td>1</td>
+                            <td>deco: 74LS13B</td>
+                          </tr>
+                          <tr>
+                            <td>8</td>
+                            <td>flip-flop tipo Des : 74LS574</td>
+                          </tr>
+                          <tr>
+                            <td>. </td>
+                            <td>alambre</td>
+                          </tr>
+                          </table> 
+                        </div>
+                    </li>
+                    <li>
+                        <h4 class="cbp-nttrigger">Herramientas</h4>
+                        <div class="cbp-ntcontent">
+                          <ul>
+                            <li><strong>Soldador</strong></li>
+                            <li><strong>Estaño</strong></li>
+                            <li><strong>Alicate</strong></li>
+                            <li><strong>Pelacables</strong></li>
+                            <li><strong>Pinzas</strong></li>
+                            <li><strong>Contrachapado</strong></li>
+                            <li><strong>Taladradora</strong></li>
+                          </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+
+    <ul id="cbp-ntaccordion" class="cbp-ntaccordion">
+        <li>
+            <h3 class="cbp-nttrigger"><a name="cubo">Creaccion del Cubo</a></h3>
+            <div class="cbp-ntcontent">
+                <ul class="cbp-ntsubaccordion">
+                    <li>
+                        <h4 class="cbp-nttrigger">Paso 1 - Prueba de los LED</h4>
+                        <div class="cbp-ntcontent">
+                        <p>EL cubo de led se compone 512 LEDs  que funcionan en conjunto, teniendo que estar todos en perfecto estado para que brillen y la estructura se mantenga. Con este paso se verán aquellos leds defectuosos y los que habrá que retirar, ya que muchas veces pueden estar defectuosos de fabrica o por la manipulacion..</p>
+                        <p>Conectando LED a LED al arduino, de forma que la patilla corta del led fuese a negativo (puerto 13) y la patilla grande a cualquiera de los otros puertos, se corrobora el estado de LED.</p> 
+                        </div>
+                    </li>
+                    <li>
+                        <h4 class="cbp-nttrigger">Paso 2 - Creación Plantilla</h4>
+                        <div class="cbp-ntcontent">
+                        <div class="img-memoria-derecha">
+                          <% @imagenes.each do |imagene| %>
+                            <%if imagene.description == "1"%>
+                              <%= image_tag imagene.image_url(:thumb).to_s %>
+                              <%= imagene.texto %> </br>
+                              <% if can? :create, Imagene %>
+                                <%= link_to 'Edit', edit_imagene_path(imagene) %>
+                              <% end %>
+                              <% if can? :delete, Imagene %>
+                                <%= link_to 'Destroy', imagene, method: :delete, data: { confirm: 'Are you sure?' } %>
+                              <% end %>
+                            <%end%>
+                          <%end%>
+                        </div>
+                        <p>Crear una plantilla de 8x8x8 para crear las capas del cubo del led. Con sus respectivas mediciones, de forma que las patillas monten unas encima de otras lo mínimo para poder ser soldado, se traza sobre el contrachapado.</p>
+                        <p>Más tarde, se taladrara el contrachapado,creando la plantilla donde se encajan los LEDs para ser soldados. De esta forma la alineación de cada uno de ellos será perfecta e igual.</p> 
+                        </div>
+                    </li>
+                    <li>
+                        <h4 class="cbp-nttrigger">Paso 3 - Primera Capa</h4>
+                        <div class="cbp-ntcontent">
+                        <div class="img-memoria-izquierda">
+                          <% @imagenes.each do |imagene| %>
+                            <%if imagene.description == "2"%>
+                              <%= image_tag imagene.image_url(:thumb).to_s %>
+                              <%= imagene.texto %> </br>
+                              <% if can? :create, Imagene %>
+                                <%= link_to 'Edit', edit_imagene_path(imagene) %>
+                              <% end %>
+                              <% if can? :delete, Imagene %>
+                                <%= link_to 'Destroy', imagene, method: :delete, data: { confirm: 'Are you sure?' } %>
+                              <% end %>
+                            <%end%>
+                          <%end%>
+                        </div>
+                        <p>EL cubo de led se compone 512 LEDs  que funcionan en conjunto, teniendo que estar todos en perfecto estado para que brillen y la estructura se mantenga. Con este paso se verán aquellos leds defectuosos y los que habrá que retirar, ya que muchas veces pueden estar defectuosos de fabrica o por la manipulacion..</p>
+                        <p>Se ponen todos los LED de la fila mirando en la misma manera, comenzando a soldar por la esquina. La fila de esquina debe ser de 90 grados, en conjunto con la otra fila. 
+                        </p>
+                        <p>Para evitar que el led quede fundido, se hace la técnica del prestañeado. Consiste en aplicar estaño sobre las patilla del led a soldar, de forma independiente, una vez que estas pastillas hayan adquirido dicho recubrimiento con un toque de calor sobre la una de las patillas a soldar queda soldado evitado que el led quede fundido o dañado.</p> 
+                        </div>
+                    </li>
+                    <li>
+                        <h4 class="cbp-nttrigger">Paso 4 - Agregar Refuerzos</h4>
+                        <div class="cbp-ntcontent">
+                        <div class="img-memoria-derecha">
+                          <% @imagenes.each do |imagene| %>
+                            <%if imagene.description == "3"%>
+                              <%= image_tag imagene.image_url(:thumb).to_s %>
+                              <%= imagene.texto %> </br>
+                              <% if can? :create, Imagene %>
+                                <%= link_to 'Edit', edit_imagene_path(imagene) %>
+                              <% end %>
+                              <% if can? :delete, Imagene %>
+                                <%= link_to 'Destroy', imagene, method: :delete, data: { confirm: 'Are you sure?' } %>
+                              <% end %>
+                            <%end%>
+                          <%end%>
+                        </div>
+                        <p>Se debe fortalecer cada capa para que sean estables y duraderos . Esto es por lo que la capa no se descompone cuando se tire de ella fuera de la plataforma.</p>
+                        <p>En nuestro caso utilizamos alambre fino, que es suficiente para cumplir  su función  de fortalecer la parte trasera y media del cubo para que no se rompa</p> 
+                        </div>
+                    </li>
+                    <li>
+                        <h4 class="cbp-nttrigger">Paso 5 -  Hacer 8 capas idénticas</h4>
+                        <div class="cbp-ntcontent">
+                        <p>Repetir los tres últimos pasos siete veces para completar las 8 capas. </p> 
+                        </div>
+                    </li>
+                    <li>
+                        <h4 class="cbp-nttrigger">Paso 6 - Soldar las capas en vertical</h4>
+                        <div class="cbp-ntcontent">
+                         <div class="img-memoria-izquierda">
+                          <% @imagenes.each do |imagene| %>
+                            <%if imagene.description == "4"%>
+                              <%= image_tag imagene.image_url(:thumb).to_s %>
+                              <%= imagene.texto %> </br>
+                              <% if can? :create, Imagene %>
+                                <%= link_to 'Edit', edit_imagene_path(imagene) %>
+                              <% end %>
+                              <% if can? :delete, Imagene %>
+                                <%= link_to 'Destroy', imagene, method: :delete, data: { confirm: 'Are you sure?' } %>
+                              <% end %>
+                            <%end%>
+                          <%end%>
+                        </div>
+                        <p>Para terminar debemos soldar todas las capas de forma vertical, doblando un poco los pines y con la ayuda de unos cilindros de el diametro del largo del led,  se van cuadrando de forma perfecta y solapada. Al igual que antes, aplicando un mínimo de calor, evitamos dañar algun led.</p> 
+                        </div>
+                    </li>
+                    <li>
+                        <h4 class="cbp-nttrigger">Paso 7 - Comprobar de que las filas y columnas funcionen</h4>
+                        <div class="cbp-ntcontent">
+                        <p>Para evitar futuras sorpresas, comprobar que todo este bien soldado, y que todos los LEDs funcionan correctamente.</p> 
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
   </div>
 </div>
- 
-   <div class="description" style="background-color:#2573A6;">
-        <p>Espero que valoreis todos nuestro esfuerzo, ya que la verdad ha sido duro.</p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="400px" height="100px" class="polaroid" preserveAspectRatio="xMidYMid meet" viewBox="0 0 1000 300">
-          <g transform="rotate(-9.424738883972168 131.13208007812517,131.28302001953134) "><rect id="svg_6" height="194.264154" width="194.264154" y="34.15094" x="34"/><rect id="svg_7" height="116.226417" width="152.754719" y="56.566035" x="54.754717"/></g><rect id="svg_2" height="0" width="1" y="108" x="123" stroke-width="10" stroke="#000000" fill="#ffffff"/><g id="svg_10" transform="rotate(8.810273170471191 211.13208007812494,164.28302001953114) "><rect id="svg_11" height="194.264154" width="194.264154" y="67.15094" x="114"/><rect id="svg_12" height="116.226417" width="152.754719" y="89.566035" x="134.754717"/></g><g id="svg_13" transform="rotate(-14.838730812072754 350.132080078125,168.28302001953125) "><rect id="svg_14" height="194.264154" width="194.264154" y="71.15094" x="253"/><rect id="svg_15" height="116.226417" width="152.754719" y="93.566035" x="273.754717"/></g><g id="svg_16" transform="rotate(-1.4553210735321045 476.1320800781219,121.28302001953003) "><rect id="svg_17" height="194.264154" width="194.264154" y="24.15094" x="379"/><rect id="svg_18" height="116.226417" width="152.754719" y="46.566035" x="399.754717"/></g><g id="svg_19" transform="rotate(-4.776742458343506 556.1320800781244,176.28302001953122) "><rect id="svg_20" height="194.264154" width="194.264154" y="79.15094" x="459"/><rect id="svg_21" height="116.226417" width="152.754719" y="101.566035" x="479.754717"/></g><g id="svg_22" transform="rotate(17.17530059814453 690.1320800781251,163.2830200195312) "><rect id="svg_23" height="194.264154" width="194.264154" y="66.15094" x="593"/><rect id="svg_24" height="116.226417" width="152.754719" y="88.566035" x="613.754717"/></g><g id="svg_25" transform="rotate(-9.506031036376953 771.132080078125,177.28302001953094) "><rect id="svg_26" height="194.264154" width="194.264154" y="80.15094" x="674"/><rect id="svg_27" height="116.226417" width="152.754719" y="102.566035" x="694.754717"/></g><g id="svg_28" transform="rotate(19.351133346557617 862.1320800781251,137.28302001953148) "><rect id="svg_29" height="194.264154" width="194.264154" y="40.15094" x="765"/><rect id="svg_30" height="116.226417" width="152.754719" y="62.566035" x="785.754717"/></g></g>
-        </svg>
-        <p><strong>¿Te ha gustado?</strong></p>
-      </div>
 
-    </div><!-- /container -->
+
+
+
+
     <script>
       // [].slice.call( document.querySelectorAll( '.photostack' ) ).forEach( function( el ) { new Photostack( el ); } );
       
@@ -67,3 +248,46 @@
         }
       } );
     </script>
+
+
+
+
+
+
+
+
+
+
+
+    <div>
+      <!-- Top Navigation -->
+      <header class="codrops-header" style="background-color:white;" >
+        <svg xmlns="http://www.w3.org/2000/svg" width="1000px" height="300px" class="polaroid" preserveAspectRatio="xMidYMid meet" viewBox="0 0 1000 300">
+          <g transform="rotate(-9.424738883972168 131.13208007812517,131.28302001953134) "><rect id="svg_6" height="194.264154" width="194.264154" y="34.15094" x="34"/><rect id="svg_7" height="116.226417" width="152.754719" y="56.566035" x="54.754717"/></g>
+          <rect id="svg_2" height="0" width="1" y="108" x="123" stroke-width="10" stroke="#47A3E2" fill="#47A3E2"/>
+          <g id="svg_10" transform="rotate(8.810273170471191 211.13208007812494,164.28302001953114) "><rect id="svg_11" height="194.264154" width="194.264154" y="67.15094" x="114"/><rect id="svg_12" height="116.226417" width="152.754719" y="89.566035" x="134.754717"/></g>
+          <g id="svg_13" transform="rotate(-14.838730812072754 350.132080078125,168.28302001953125) "><rect id="svg_14" height="194.264154" width="194.264154" y="71.15094" x="253"/><rect id="svg_15" height="116.226417" width="152.754719" y="93.566035" x="273.754717"/></g>
+          <g id="svg_16" transform="rotate(-1.4553210735321045 476.1320800781219,121.28302001953003) "><rect id="svg_17" height="194.264154" width="194.264154" y="24.15094" x="379"/><rect id="svg_18" height="116.226417" width="152.754719" y="46.566035" x="399.754717"/></g>
+          <g id="svg_19" transform="rotate(-4.776742458343506 556.1320800781244,176.28302001953122) "><rect id="svg_20" height="194.264154" width="194.264154" y="79.15094" x="459"/><rect id="svg_21" height="116.226417" width="152.754719" y="101.566035" x="479.754717"/></g>
+          <g id="svg_22" transform="rotate(17.17530059814453 690.1320800781251,163.2830200195312) "><rect id="svg_23" height="194.264154" width="194.264154" y="66.15094" x="593"/><rect id="svg_24" height="116.226417" width="152.754719" y="88.566035" x="613.754717"/></g>
+          <g id="svg_25" transform="rotate(-9.506031036376953 771.132080078125,177.28302001953094) "><rect id="svg_26" height="194.264154" width="194.264154" y="80.15094" x="674"/><rect id="svg_27" height="116.226417" width="152.754719" y="102.566035" x="694.754717"/></g>
+          <g id="svg_28" transform="rotate(19.351133346557617 862.1320800781251,137.28302001953148) "><rect id="svg_29" height="194.264154" width="194.264154" y="40.15094" x="765"/><rect id="svg_30" height="116.226417" width="152.754719" y="62.566035" x="785.754717"/></g></g>
+        </svg>
+        <h2 style="color:#2A6496;">Este ha sido todo el desarrollo del proyecto</h2>
+        <p style="text-align:center;color:#47A3DA;">Para mas informacion contacte con nosotros <%= link_to '', new_contacto_path, class: 'fa fa-phone' %></p>
+        <p style="text-align:center;"></p>
+      </header>
+
+
+<div >
+  <a id='IrArriba' class=" IrArriba-memoria data-info" href=""><i class="fa fa-chevron-up fa-3x"></i></a>
+</div>
+
+ <script type='text/javascript'>
+  $(document).ready(function() {
+    $('.IrArriba-memoria').click(function(){ //Id del elemento cliqueable
+      $('html, body').animate({scrollTop:0}, 500);
+      return false;
+    });
+  });
+</script>

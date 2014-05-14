@@ -1,35 +1,50 @@
 <div class="container">
-  <%= render 'layouts/navigation_links'%>
+
+  <div class="col-md-3">
+      <%= render 'layouts/navigation_links'%>
+  </div>
+
+  <div class="col-md-9">
+    <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Usuarios</div>
+    <div class="panel-body">
+      <p>Hola <strong> <%= current_user.name %> </strong>. Aquí podras gestionar los usuarios si eres Admin</p>
+    </div>
+
+    <!-- Table -->
+    <table class="table table-condensed">
+          <thead>
+            <tr>
+              <th>Nombre Usuario</th>
+              <th>Email</th>
+              <th>Registrado</th>
+              <th>Role</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+
+          <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td><%= link_to user.name, user %></td>
+              <td><%= user.email %></td>
+              <td><%= user.created_at.to_date %></td>
+              <td><%= user.roles.first.name.titleize unless user.roles.first.nil? %></td>
+              <td>
+                <a data-toggle="modal" href="#role-options-<%= user.id %>" class="btn btn-mini" type="button">Cambiar role</a>
+                <%= render user %>
+              </td>
+
+              <td><%= link_to("Eliminar usuario", user_path(user), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-mini') unless user == current_user %></td>
+            </tr>
+          <% end %>
+          </tbody>
+    </table>
+  </div>
+  </div>  
 </div>
 
-<div class="container">
-      <h3>Usuarios</h3>
-      <table class="table table-condensed">
-        <thead>
-          <tr>
-            <th>Nombre Usuario</th>
-            <th>Email</th>
-            <th>Registrado</th>
-            <th>Role</th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-        <% @users.each do |user| %>
-          <tr>
-            <td><%= link_to user.name, user %></td>
-            <td><%= user.email %></td>
-            <td><%= user.created_at.to_date %></td>
-            <td><%= user.roles.first.name.titleize unless user.roles.first.nil? %></td>
-            <td>
-              <a data-toggle="modal" href="#role-options-<%= user.id %>" class="btn btn-mini" type="button">Cambiar role</a>
-              <%= render user %>
-            </td>
 
-            <td><%= link_to("Eliminar usuario", user_path(user), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-mini') unless user == current_user %></td>
-          </tr>
-        <% end %>
-        </tbody>
-      </table>
-</div>
+

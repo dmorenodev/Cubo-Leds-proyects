@@ -1,18 +1,21 @@
-<div class="container">
-		<div class="contenedor-menu-area">
-			<% if user_signed_in? %>
-				<p>Hola <strong> <%= current_user.name %> </strong>.</p> 
-					<% if can? :manage, User %>
-				 		<%= link_to 'Gestor de usuarios', users_path %>
+    <% if user_signed_in? %>
+        <div class=" sidebar">
+	          <ul class="nav nav-sidebar">
+	            <li><p>Hola <strong> <%= current_user.name %> </strong>.</p></li>
+		            <% if can? :manage, User %>
+					 	<li><%= link_to 'Gestor de usuarios', users_path %></li>
 					<% end %>
-				<%= link_to 'Editar cuenta', edit_user_registration_path %>
-		     	<%= link_to 'Cerrar sesión', destroy_user_session_path, :method=>'delete' %> 
-			<% else %>
-				<%= render 'layouts/messages_registro_inicio'%>
-			<% end %>
-		</div>
-	</div>
-</div>
+	            <li><%= link_to 'Editar cuenta', edit_user_registration_path %></li>
+	            <li role="presentation" class="divider"></li>
+	            <li><%= link_to 'Cerrar sesión', destroy_user_session_path, :method=>'delete' %></li>
+	          </ul>
+        </div>
+	<% else %>
+		<%= render 'layouts/messages_registro_inicio'%>
+	<% end %>
+
+
+
 
 
 

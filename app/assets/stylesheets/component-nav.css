@@ -1,4 +1,4 @@
-/* General Blueprint Style */
+e/* General Blueprint Style */
 /*@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);*/
 
 @font-face {
@@ -269,11 +269,5 @@ p.info {
 	margin-top: 30px;
 }
 .contenedor-menu-area{
-    background-color: #F5F5F5;
-    border: 1px solid #E3E3E3;
-    border-radius: 4px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
-
-
-
+    height: 310px;
 }

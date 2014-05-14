@@ -1,16 +1,18 @@
 
 /* Botón Ir Arriba ----------------------------------------------- */
 #IrArriba {
-position: fixed;
-bottom: 30px; /* Distancia desde abajo */
-right: 30px; /* Distancia desde la derecha */
-width: 60px; /* Ancho del botón */
-height: 60px; /* Alto del botón */
-display: block;
-background-color: white;
-border-radius: 100px;
-box-shadow: 5px 5px 5px #2573A6;
-text-align: center;
-padding-top: 5px;
-z-index: 100;
-}
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 4px solid #47A3DA;
+    border-radius: 50%;
+    height: 60px;
+    padding-top: 5px;
+    width: 60px;
+	position: fixed;
+	bottom: 30px; /* Distancia desde abajo */
+	right: 30px; /* Distancia desde la derecha */
+	display: block;
+	background-color: white;
+	text-align: center;
+	padding-top: 3px;
+	z-index: 100;
+	}

@@ -4,7 +4,7 @@ class ImagenesController < ApplicationController
   # GET /imagenes
   # GET /imagenes.json
   def index
-    @imagenes = Imagene.paginate(:page => params[:page], :per_page => 2)
+    @imagenes = Imagene.all
   end
 
   # GET /imagenes/1
