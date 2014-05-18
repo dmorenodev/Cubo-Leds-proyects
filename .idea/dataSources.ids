@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Rails Cubo-Leds-proyects: development" uuid="aba077c4-6d79-4130-b1bf-f0d57a2787c7">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails Cubo-Leds-proyects: test" uuid="da294218-778d-4f0f-a196-e4225de113ce">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails Cubo-Leds-proyects: production" uuid="511ee060-37d2-4f08-b58f-9cffde4cd7a8">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>
