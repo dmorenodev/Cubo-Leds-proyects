@@ -105,21 +105,4 @@ ActiveRecord::Schema.define(version: 20140508153426) do
     t.datetime "updated_at"
   end
 
-  create_table "videoos", force: true do |t|
-    t.string   "Titulo"
-    t.text     "Descripcion"
-    t.string   "url"
-    t.datetime "created_at"
-    t.string   "datetime"
-    t.datetime "updated_at"
-    t.string   "subido"
-  end
-
-  create_table "videos", force: true do |t|
-    t.string   "titulo"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
 end
