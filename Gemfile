@@ -18,7 +18,6 @@ gem 'devise'
 gem 'rolify'
 gem 'thin'
 gem 'gravatar_image_tag'
-gem 'yaml_db'
 gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
 group :development do
