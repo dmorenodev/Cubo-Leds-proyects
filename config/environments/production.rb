@@ -77,14 +77,14 @@ CuboLedsproyect::Application.configure do
   config.action_mailer.smtp_settings = {
     address: "smtp.gmail.com",
     port: 587,
-    domain: "http://188.226.250.243/",
+    domain: "http://cubeledproyect.com/",
     authentication: "plain",
     enable_starttls_auto: true,
     user_name: "cuboledsproyect@gmail.com",
     password: "cuevas940921"
   }
   # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => '188.226.250.243' }
+  config.action_mailer.default_url_options = { :host => 'http://cubeledproyect.com/' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
