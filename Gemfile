@@ -1,4 +1,8 @@
 source 'https://rubygems.org'
+<<<<<<< HEAD
+=======
+gem 'mysql'
+>>>>>>> d200f2d8cf2bed936a2bf7a17a25686397d01c9d
 gem 'rails', '4.0.4'
 gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.2'

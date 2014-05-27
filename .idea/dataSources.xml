@@ -3,8 +3,10 @@
   <component name="DataSourceManagerImpl" format="xml" hash="317079084">
     <data-source source="LOCAL" name="Rails Cubo-Leds-proyects: development" uuid="aba077c4-6d79-4130-b1bf-f0d57a2787c7">
       <driver-ref>sqlite.xerial</driver-ref>
-      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://188.226.250.243/rails</jdbc-url>
+      <user-name>rails</user-name>
+      <user-password>dfccdfccdf98dfcfdfe4dfc1dfdcdf92dfd8dfda</user-password>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails Cubo-Leds-proyects: test" uuid="da294218-778d-4f0f-a196-e4225de113ce">
