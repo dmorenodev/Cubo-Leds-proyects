@@ -36,7 +36,6 @@ class ImagenesController < ApplicationController
       end
     end
   end
-
   # PATCH/PUT /imagenes/1
   # PATCH/PUT /imagenes/1.json
   def update
