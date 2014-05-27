@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+ruby '2.0.0'
+>>>>>>> 720ee96e66f131a2220f23444d11e300b707f74c
 gem 'mysql'
 >>>>>>> d200f2d8cf2bed936a2bf7a17a25686397d01c9d
 gem 'rails', '4.0.4'
