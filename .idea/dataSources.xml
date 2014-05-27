@@ -4,9 +4,9 @@
     <data-source source="LOCAL" name="Rails Cubo-Leds-proyects: development" uuid="aba077c4-6d79-4130-b1bf-f0d57a2787c7">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://188.226.250.243/rails</jdbc-url>
-      <user-name>rails</user-name>
-      <user-password>dfccdfccdf98dfcfdfe4dfc1dfdcdf92dfd8dfda</user-password>
+      <jdbc-url>jdbc:mysql://188.226.250.243/bd_development</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>dfc9dfdfdfcfdfdcdfcbdfd9df93df9edf9adf93df98df9b</user-password>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails Cubo-Leds-proyects: test" uuid="da294218-778d-4f0f-a196-e4225de113ce">

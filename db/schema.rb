@@ -46,14 +46,14 @@ ActiveRecord::Schema.define(version: 20140508153426) do
     t.datetime "updated_at"
   end
 
-  add_index "impressions", ["controller_name", "action_name", "ip_address"], name: "controlleraction_ip_index"
-  add_index "impressions", ["controller_name", "action_name", "request_hash"], name: "controlleraction_request_index"
-  add_index "impressions", ["controller_name", "action_name", "session_hash"], name: "controlleraction_session_index"
-  add_index "impressions", ["impressionable_type", "impressionable_id", "ip_address"], name: "poly_ip_index"
-  add_index "impressions", ["impressionable_type", "impressionable_id", "request_hash"], name: "poly_request_index"
-  add_index "impressions", ["impressionable_type", "impressionable_id", "session_hash"], name: "poly_session_index"
-  add_index "impressions", ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index"
-  add_index "impressions", ["user_id"], name: "index_impressions_on_user_id"
+  add_index "impressions", ["controller_name", "action_name", "ip_address"], name: "controlleraction_ip_index", using: :btree
+  add_index "impressions", ["controller_name", "action_name", "request_hash"], name: "controlleraction_request_index", using: :btree
+  add_index "impressions", ["controller_name", "action_name", "session_hash"], name: "controlleraction_session_index", using: :btree
+  add_index "impressions", ["impressionable_type", "impressionable_id", "ip_address"], name: "poly_ip_index", using: :btree
+  add_index "impressions", ["impressionable_type", "impressionable_id", "request_hash"], name: "poly_request_index", using: :btree
+  add_index "impressions", ["impressionable_type", "impressionable_id", "session_hash"], name: "poly_session_index", using: :btree
+  add_index "impressions", ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index", length: {"impressionable_type"=>nil, "message"=>"255", "impressionable_id"=>nil}, using: :btree
+  add_index "impressions", ["user_id"], name: "index_impressions_on_user_id", using: :btree
 
   create_table "roles", force: true do |t|
     t.string   "name"
@@ -63,8 +63,8 @@ ActiveRecord::Schema.define(version: 20140508153426) do
     t.datetime "updated_at"
   end
 
-  add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
-  add_index "roles", ["name"], name: "index_roles_on_name"
+  add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
+  add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -86,38 +86,21 @@ ActiveRecord::Schema.define(version: 20140508153426) do
     t.string   "unconfirmed_email"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "users_roles", id: false, force: true do |t|
     t.integer "user_id"
     t.integer "role_id"
   end
 
-  add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
+  add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
 
   create_table "videeoos", force: true do |t|
     t.string   "Titulo"
     t.text     "Descripcion"
     t.string   "Url"
     t.string   "Subido_por"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "videoos", force: true do |t|
-    t.string   "Titulo"
-    t.text     "Descripcion"
-    t.string   "url"
-    t.datetime "created_at"
-    t.string   "datetime"
-    t.datetime "updated_at"
-    t.string   "subido"
-  end
-
-  create_table "videos", force: true do |t|
-    t.string   "titulo"
-    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
